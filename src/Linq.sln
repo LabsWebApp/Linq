@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Base", "Base", "{2986DCA4-20AA-4CD9-A39C-19263E4F66BE}"
+	ProjectSection(SolutionItems) = preProject
+		04_ExpressionTree.txt = 04_ExpressionTree.txt
+		05_SQL.txt = 05_SQL.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01_AnonymousTypes", "01_AnonymousTypes", "{BF3787A9-B30E-47BB-AF3D-74940D191A6F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02_ExtensionMethods", "02_ExtensionMethods", "{8E1DDB0A-558D-47AC-975A-7BCFAA06F39D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03_LambdaCalculus", "03_LambdaCalculus", "{55359DB8-1318-4AEC-9C1E-DC81F167F656}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LINQ", "LINQ", "{BB275A40-EF2D-452E-A519-A03C8084A750}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LambdaExpressions", "LambdaExpressions", "{F4B6D7D9-49CC-454E-BA04-F33F76834DB1}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BF3787A9-B30E-47BB-AF3D-74940D191A6F} = {2986DCA4-20AA-4CD9-A39C-19263E4F66BE}
+		{8E1DDB0A-558D-47AC-975A-7BCFAA06F39D} = {2986DCA4-20AA-4CD9-A39C-19263E4F66BE}
+		{55359DB8-1318-4AEC-9C1E-DC81F167F656} = {2986DCA4-20AA-4CD9-A39C-19263E4F66BE}
+		{F4B6D7D9-49CC-454E-BA04-F33F76834DB1} = {BB275A40-EF2D-452E-A519-A03C8084A750}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A0E231E-F1E2-4F83-8499-AF054BB2985E}
+	EndGlobalSection
+EndGlobal
