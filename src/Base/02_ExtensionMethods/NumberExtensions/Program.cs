@@ -1,5 +1,5 @@
-﻿using System.Numerics;
-using static System.Console;
+﻿using static System.Console;
+using System.Numerics;
 
 foreach (var item in 0) WriteLine(item);
 

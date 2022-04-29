@@ -1,16 +1,18 @@
-﻿int number = 0;
+﻿using static System.Console;
+
+int number = 0;
 
 // Анонимный метод - как аргумент метода.
 WriteStream(() => number++);
 
-Console.WriteLine($"Результат: {number}");
+WriteLine($"Результат: {number}");
 
 // Задержка.
-Console.ReadKey();
+ReadKey();
 
 // Делегат в качестве формального аргумента.
 static void WriteStream(Func<int> counter)
 {
     for (int i = 0; i < 10; ++i)
-        Console.Write($"{counter.Invoke()}, ");
+        Write($"{counter.Invoke()}, ");
 }

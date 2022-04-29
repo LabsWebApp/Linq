@@ -1,4 +1,6 @@
-﻿var members = new List<string>
+﻿using static System.Console;
+
+var members = new List<string>
 {
     "Один - One",
     "Два - Two",
@@ -9,12 +11,12 @@
 WriteStream(members, "а", (x, y) => x.ToLower().Contains(y));
 
 // Задержка.
-Console.ReadKey();
+ReadKey();
 
 // Метод.
 static void WriteStream(IEnumerable<string> members, string name, Func<string, string, bool> predicate)
 {
     foreach (string member in members)
         if (predicate(member, name)) // Делегат-Предикат.
-            Console.WriteLine(member);
+            WriteLine(member);
 }

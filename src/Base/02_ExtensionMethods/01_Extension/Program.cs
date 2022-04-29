@@ -1,4 +1,6 @@
-﻿// Расширяющие методы. (Extension methods)
+﻿using static System.Console;
+
+// Расширяющие методы. (Extension methods)
 // Расширяющие методы могут быть только статическими и создаваться только в статических классах.
 
 string text = "Тестовая строка";
@@ -10,11 +12,11 @@ ExtensionClass.ExtensionMethod(text);
 text.ExtensionMethod();
 
 // Delay.
-Console.ReadKey();
+ReadKey();
 
 static class ExtensionClass
 {
     // this - сообщает компилятору, что данный метод является расширяющим (Extension)!
     public static void ExtensionMethod(this string value) =>
-        Console.WriteLine(value);
+        WriteLine(value);
 }

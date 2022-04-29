@@ -1,4 +1,5 @@
-﻿// Анонимные типы.
+﻿using static System.Console;
+// Анонимные типы.
 
 // Анонимные типы предлагают удобный способ инкапсуляции набора свойств в один объект 
 // без необходимости предварительного явного определения типа.
@@ -8,11 +9,11 @@
 
 var instance = new { Name = "Petja", Age = 20 };
 
-Console.WriteLine($"Name = {instance.Name}, Age = {instance.Age}");
+WriteLine($"Name = {instance.Name}, Age = {instance.Age}");
 
 Type type = instance.GetType();
 
-Console.WriteLine(type.ToString());
+WriteLine(type.ToString());
 
 // Delay.
-Console.ReadKey();
+ReadKey();
