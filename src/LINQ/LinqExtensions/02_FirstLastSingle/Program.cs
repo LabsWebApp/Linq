@@ -54,3 +54,17 @@ Console.WriteLine(single ?? "null");   // null
 // первый и единственный элемент, начинающийся на "D", если его нет, то "default"
 single = people.SingleOrDefault(s => s[0] == 'F', "default");
 Console.WriteLine(single ?? "null");   // "default"
+
+people = new string[] { "Tom", "Bob", "Kate", "Tim", "Mike", "Sam" };
+single = people.ElementAt(0);
+Console.WriteLine(single ?? "null");   // Tom
+
+single = people.ElementAt(^1);
+Console.WriteLine(single ?? "null");   // Sam
+
+//single = people.ElementAt(^99);
+//Console.WriteLine(single ?? "null");   // Исключение
+
+single = people.ElementAtOrDefault(^99);
+Console.WriteLine(single ?? "null");   // null
+
