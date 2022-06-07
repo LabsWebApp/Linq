@@ -5,7 +5,7 @@ Employee[] employees = Employee.GetEmployeesArray();
 EmployeeOptionEntry[] empOptions = EmployeeOptionEntry.GetEmployeeOptionEntries();
 
 WriteLine("Join");
-var employeeOptions = employees
+var employeeOptions = employees //  outer sequence
   .Join(
     empOptions,       //  inner sequence
     e => e.Id,        //  outerKeySelector
@@ -14,7 +14,8 @@ var employeeOptions = employees
     {
         e.Id,
         name = $"{e.FirstName} {e.LastName}",
-        options = o.OptionsCount
+        options = o.OptionsCount,
+        date = o.DateAwarded
     });
 
 foreach (var item in employeeOptions)
@@ -41,6 +42,7 @@ WriteLine(employeeOptions2.GetType());
 foreach (var item in employeeOptions2)
     WriteLine(item);
 
+ReadKey();
 WriteLine("GroupJoin");
 
 var group = employees

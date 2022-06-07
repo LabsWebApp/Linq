@@ -1,13 +1,15 @@
 ﻿using static Core.Data;
 using static System.Console;
+using Core;
 
-var sequence = Cars.Select(p => p.Length);
+var sequence = Cars.Select(p => p.Replace(" ", string.Empty).Length);
 WriteLine(sequence.GetType());
 
-foreach (int i in sequence) Write(i + " ");
+//foreach (int i in sequence) Write(i + " ");
+sequence.CommaWriter();
 WriteLine();
 
-var sequence2 = Cars.Select(p => new { p, p.Length });
+var sequence2 = Cars.Select(p => new { Name = p, p.Length });
 WriteLine(sequence2.GetType());
 
 foreach (var i in sequence2) WriteLine(i);

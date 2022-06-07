@@ -20,6 +20,8 @@ var employeeOptions = Employee.GetEmployeesArray()
 foreach (var item in employeeOptions) WriteLine(item);
 WriteLine();
 
+ReadKey();
+
 var employeeOptionsEx = Employee.GetEmployeesArray()
     .SelectMany(e => EmployeeOptionEntry.GetEmployeeOptionEntries()
         .Where(eo => eo.Id == e.Id)
@@ -28,8 +30,8 @@ var employeeOptionsEx = Employee.GetEmployeesArray()
         {
             Name = $"{e.FirstName} {e.LastName}",
             Option = seo
-                .Select(o => o.OptionsCount)
-                    .Sum()
+                        .Select(o => o.OptionsCount)
+                        .Sum()
         });
 
 foreach (var item in employeeOptionsEx) WriteLine(item);

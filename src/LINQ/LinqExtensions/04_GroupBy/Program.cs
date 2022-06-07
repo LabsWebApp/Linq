@@ -2,11 +2,11 @@
 
 using static System.Console;
 
-int[] numbers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+int[] numbers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 , -4, -5 };
 
 // Построить запрос.
 // Разделение чисел на четные и нечетные.
-var query = numbers.GroupBy(i => i % 2);
+var query = numbers.GroupBy(i => Math.Abs(i % 2));
 
 foreach (var group in query)
 {
@@ -18,6 +18,8 @@ foreach (var group in query)
 
 WriteLine();
 
+ReadKey();
+
 var comp = new FounderNumberComparer();
 var empOptions = EmployeeOptionEntry.GetEmployeeOptionEntries();
 IEnumerable<IGrouping<int, EmployeeOptionEntry>> opts = empOptions
@@ -27,7 +29,7 @@ IEnumerable<IGrouping<int, EmployeeOptionEntry>> opts = empOptions
 foreach (IGrouping<int, EmployeeOptionEntry> keyGroup in opts)
 {
     WriteLine("Записи опционов для: " +
-      (comp.isFounder(keyGroup.Key) ? "основатель" : "работяга"));
+      (comp.IsFounder(keyGroup.Key) ? "основатель" : "работяга"));
 
     // Теперь перечисление по сгруппированной последовательности 
     // элементов EmployeeOptionEntry
@@ -36,6 +38,7 @@ foreach (IGrouping<int, EmployeeOptionEntry> keyGroup in opts)
           element.Id, element.OptionsCount, element.DateAwarded);
 }
 
+ReadKey();
 
 IEnumerable<IGrouping<int, DateTime>> optsDate = empOptions
   .GroupBy(o => o.Id, e => e.DateAwarded);
@@ -52,7 +55,7 @@ foreach (IGrouping<int, DateTime> keyGroup in optsDate)
 
 public class FounderNumberComparer : IEqualityComparer<int>
 {
-    public bool Equals(int x, int y) => isFounder(x) == isFounder(y);
+    public bool Equals(int x, int y) => IsFounder(x) == IsFounder(y);
 
     public int GetHashCode(int i) => i switch
     {
@@ -60,5 +63,5 @@ public class FounderNumberComparer : IEqualityComparer<int>
         _ => 1.GetHashCode()
     };
 
-    public bool isFounder(int id) => id < 100;
+    public bool IsFounder(int id) => id < 100;
 }

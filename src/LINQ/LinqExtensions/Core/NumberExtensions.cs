@@ -29,7 +29,7 @@ public static class NumberExtensions
         for (var i = number - k; i <= k; i++) yield return func(i);
     }
 
-    public static void CommaWritter(this IEnumerable<int> numbers)
+    public static void CommaWriter<T>(this IEnumerable<T> numbers)
     {
         StringBuilder sb = new();
         foreach (var number in numbers) sb.Append($"{number}, ");

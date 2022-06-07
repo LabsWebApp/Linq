@@ -28,11 +28,11 @@ var employees = new List<Employee>
 };
 
 // Выражение запроса.
-var query = // query - переменная запрса.
+var query = // query - переменная запроса.
     from employee in employees // from - объявляет переменную диапазона employee.
     where employee.Salary > 100000 // where - фильтр
     orderby employee.LastName, employee.FirstName
-    select new // select - Опреация проекции.
+    select new // select - Операция проекции.
     {
         LastName = employee.LastName,
         FirstName = employee.FirstName

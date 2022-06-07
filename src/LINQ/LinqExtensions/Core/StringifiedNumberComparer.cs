@@ -18,7 +18,7 @@ public class StrIntComparer : IEqualityComparer<object>
         (null, _) or (_, null) => false,
         (string, int) => int.Parse((string)x) == (int)y,
         (int, string) => (int)x == int.Parse((string)y),
-        _ => ((object)x).Equals((object)y)
+        _ => x.Equals(y)
     };
 
     public int GetHashCode(object obj) => obj switch

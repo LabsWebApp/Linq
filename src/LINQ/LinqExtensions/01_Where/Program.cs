@@ -9,7 +9,7 @@ foreach (var item in where) Write(item + ", ");
 
 WriteLine();
 foreach (var item in sequence
-    .Where((x, i) => x % 2 == 0 && i < 5))
+    .Where((x, i) => i < 5 && x % 2 == 0))
     Write(item + ", ");
 
 ReadKey();

@@ -44,16 +44,16 @@ Console.WriteLine(single);   // Dom
 single = (new string[] { }).SingleOrDefault();
 Console.WriteLine(single ?? "default"); // default
 
-//single = people.SingleOrDefault();
-//Console.WriteLine(single);   // Исключение
+//single = people.SingleOrDefault(); // Исключение
+//Console.WriteLine(single);   
 
-// первый и единственный элемент, начинающийся на "D", если его нет, то null
+// первый и единственный элемент, начинающийся на "F", если его нет, то null
 single = people.SingleOrDefault(s => s[0] == 'F');
 Console.WriteLine(single ?? "null");   // null
 
 // первый и единственный элемент, начинающийся на "D", если его нет, то "default"
-single = people.SingleOrDefault(s => s[0] == 'F', "default");
-Console.WriteLine(single ?? "null");   // "default"
+single = people.SingleOrDefault(s => s[0] == 'D', "default");
+Console.WriteLine(single ?? "null");   // "Dom"
 
 people = new string[] { "Tom", "Bob", "Kate", "Tim", "Mike", "Sam" };
 single = people.ElementAt(0);

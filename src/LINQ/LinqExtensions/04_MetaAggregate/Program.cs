@@ -21,8 +21,8 @@ WriteLine(sum);     // 340
 
 Person[] people =
 {
-                new Person("Tom", 37), new Person("Sam", 28), new Person("Bob", 41)
-            };
+    new Person("Tom", 37), new Person("Sam", 28), new Person("Bob", 41)
+};
 
 int ageSum = people.Sum(p => p.Age switch
 {

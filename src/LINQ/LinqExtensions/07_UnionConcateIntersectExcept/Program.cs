@@ -12,12 +12,13 @@ Enumerable.Range(0, 10)
 
 WriteLine("Concat");
 
-var conc = Enumerable.Range(0, 10).Concat(Enumerable.Range(5, 10));
-conc.CommaWritter();
+var concat = Enumerable.Range(0, 10).Concat(Enumerable.Range(5, 10));
+concat.CommaWritter();
 
 WriteLine("Distinct");
 
-conc.Distinct().CommaWritter();
+// ReSharper disable once PossibleMultipleEnumeration
+concat.Distinct().CommaWritter();
 
 WriteLine("Intersect");
 

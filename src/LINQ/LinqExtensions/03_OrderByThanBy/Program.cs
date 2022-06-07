@@ -16,8 +16,9 @@ int[] numbers = { 99, 5, 54, 9, 55, 64, 48, 77, 0, -5, 9, 77, 52, -8, -26, 33};
 var newOrder = numbers.OrderBy(i => i, new EvenComparer());
 
 WriteLine();
-numbers.CommaWritter();
-newOrder.CommaWritter();
+numbers.CommaWriter();
+newOrder.CommaWriter();
+newOrder.ThenByDescending(i => i).CommaWriter();
 
 ReadKey();
 

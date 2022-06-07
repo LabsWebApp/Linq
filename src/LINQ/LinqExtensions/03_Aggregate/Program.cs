@@ -18,7 +18,7 @@ var csv = hayStack.Aggregate(
     (b, e) => b.Length switch
     {
         0 => b.Append(e),
-        _ => b.Append($"; {e}")
+        _ => b.Append($", {e}")
     },
     b => b.Append("\nEND").ToString());
 WriteLine(csv);

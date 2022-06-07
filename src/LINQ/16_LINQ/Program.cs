@@ -13,11 +13,11 @@ var query = from x in numbers
 
 foreach (var item in query)
 {
-    WriteLine("mod2 == {0}", item.Key);
-    WriteLine("Count == {0}", item.Count);
+    WriteLine($"mod2 == {item.Key}");
+    WriteLine($"Count == {item.Count}");
 
     foreach (var number in item.Group)
-        Write("{0}, ", number);
+        Write($"{number}, ");
 
     WriteLine("\n");
 }
