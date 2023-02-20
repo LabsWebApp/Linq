@@ -2,11 +2,11 @@
 
 namespace ExpressionTree;
 
-public class Simple<T>
+public class SimpleAdd<T>
 {
     private readonly Func<T, T, T> _add;
 
-    public Simple()
+    public SimpleAdd()
     {
         var paramX = Expression.Parameter(typeof(T), "x");
         var paramY = Expression.Parameter(typeof(T), "y");

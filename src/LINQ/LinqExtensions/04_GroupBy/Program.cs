@@ -6,7 +6,7 @@ int[] numbers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 , -4, -5 };
 
 // Построить запрос.
 // Разделение чисел на четные и нечетные.
-var query = numbers.GroupBy(i => Math.Abs(i % 2));
+var query = numbers.GroupBy(i => Math.Abs(i % 3));
 
 foreach (var group in query)
 {
@@ -57,11 +57,7 @@ public class FounderNumberComparer : IEqualityComparer<int>
 {
     public bool Equals(int x, int y) => IsFounder(x) == IsFounder(y);
 
-    public int GetHashCode(int i) => i switch
-    {
-        < 100 => 100.GetHashCode(),
-        _ => 1.GetHashCode()
-    };
+    public int GetHashCode(int i) => IsFounder(i) ? 1 : 100;
 
     public bool IsFounder(int id) => id < 100;
 }

@@ -43,7 +43,7 @@ ILookup<int, Actor> lookup = Actor.GetActors().ToLookup(k => k.BirthYear);
 // Посмотрим, можно ли найти кого-то, рожденного в 1964 г.
 IEnumerable<Actor> actors = lookup[1964];
 foreach (var actor in actors)
-    WriteLine("{0} {1}", actor.FirstName, actor.LastName);
+    WriteLine($"1964: {actor.FirstName} {actor.LastName}");
 
 ILookup<string, Actor2> lookup2 = Actor2
     .GetActors()
@@ -51,7 +51,7 @@ ILookup<string, Actor2> lookup2 = Actor2
 
 IEnumerable<Actor2> actors2 = lookup2["0001964"];
 foreach (var actor in actors)
-    WriteLine($"{actor.FirstName} {actor.LastName}");
+    WriteLine($"0001964: {actor.FirstName} {actor.LastName}");
 
 var nameLookup = Actor
     .GetActors()

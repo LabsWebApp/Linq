@@ -1,36 +1,36 @@
 ﻿using Core;
 using static System.Console;
+// ReSharper disable PossibleMultipleEnumeration
 
-Enumerable.Range(0, 10).CommaWritter();
-Enumerable.Range(5, 10).CommaWritter();
+Enumerable.Range(0, 10).CommaWriter();
+Enumerable.Range(5, 10).CommaWriter();
 
-WriteLine("Union");
+WriteLine("Union:");
 
 Enumerable.Range(0, 10)
     .Union(Enumerable.Range(5, 10))
-    .CommaWritter();
+    .CommaWriter();
 
 WriteLine("Concat");
 
 var concat = Enumerable.Range(0, 10).Concat(Enumerable.Range(5, 10));
-concat.CommaWritter();
+concat.CommaWriter();
 
 WriteLine("Distinct");
 
-// ReSharper disable once PossibleMultipleEnumeration
-concat.Distinct().CommaWritter();
+concat.Distinct().CommaWriter();
 
 WriteLine("Intersect");
 
 Enumerable.Range(0, 10)
     .Intersect(Enumerable.Range(5, 10))
-    .CommaWritter();
+    .CommaWriter();
 
 WriteLine("Except");
 
 Enumerable.Range(0, 10)
     .Except(Enumerable.Range(5, 10))
-    .CommaWritter();
+    .CommaWriter();
 
 ReadKey();
 

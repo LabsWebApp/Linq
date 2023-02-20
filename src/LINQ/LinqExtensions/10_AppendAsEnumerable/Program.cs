@@ -18,25 +18,25 @@ WriteLine("IEnumerable<bool> Count() = " + a.AsEnumerable().Count());
 
 class A : IEnumerable<bool>, IEnumerator<bool>
 {
-    private bool position = false;
+    private bool _position = false;
 
     public int Count() => 0;
 
-    public bool Current => position;
+    public bool Current => _position;
 
     public void Dispose() { }
 
     public bool MoveNext()
     {
-        if (!position)
+        if (!_position)
         {
-            position = true;
+            _position = true;
             return true;
         }
         return false;
     }
 
-    public void Reset() => position = false;
+    public void Reset() => _position = false;
 
     public IEnumerator<bool> GetEnumerator()
     {

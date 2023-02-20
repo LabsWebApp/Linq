@@ -9,7 +9,7 @@ public class SimpleBenchmark
     private const int SemiMax = int.MaxValue / 2;
     private readonly Random _random = new(DateTime.Now.Millisecond);
     private int RandomInt(int maxValue = SemiMax) => _random.Next(0, maxValue);
-    private Simple<int> _simple;
+    private SimpleAdd<int>? _simple;
 
     [GlobalSetup]
     public void Setup() => _simple = new();
