@@ -6,10 +6,12 @@ int[] numbers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
 // Построить запрос.
 // Разделение чисел на четные и нечетные.
-var query = from x in numbers
-    group x by x % 2 into partition
-    where partition.Key == 0
-    select new { Key = partition.Key, Count = partition.Count(), Group = partition };
+var query = 
+    from x in numbers
+    group x by x % 2 
+        into partition
+    //where partition.Key == 0
+    select new { partition.Key, Count = partition.Count(), Group = partition };
 
 
 foreach (var item in query)
@@ -20,7 +22,7 @@ foreach (var item in query)
     foreach (var number in item.Group)
         Write($"{number}, ");
 
-    WriteLine();
+    WriteLine("\n*****");
 }
 
 // Delay.

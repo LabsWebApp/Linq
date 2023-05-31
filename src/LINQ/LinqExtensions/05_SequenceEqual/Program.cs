@@ -9,7 +9,7 @@ eq = Cars.SequenceEqual(list);
 Console.WriteLine(eq);
 
 string[] strArr1 = { "0012", "130", "0000019", "4" };
-string[] strArr2 = { "12", "0130", "019", "0004" };
+string[] strArr2 = { "12", "0004", "0130", "019"};
 
 eq = strArr1.SequenceEqual(strArr2, new StringifiedNumberComparer());
 Console.WriteLine(eq);

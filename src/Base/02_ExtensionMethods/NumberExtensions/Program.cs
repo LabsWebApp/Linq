@@ -3,17 +3,26 @@ using System.Numerics;
 
 foreach (var item in 0) WriteLine(item);
 
+Console.WriteLine();
+
 foreach (var item in 10) WriteLine(item);
 
+Console.WriteLine();
+
 foreach (var item in -10) WriteLine(item);
+Console.WriteLine();
 
 //foreach (var item in int.MaxValue) Console.WriteLine(item);
 
 IEnumerable<BigInteger> collection = 3.GetEnumerator(i => (BigInteger)long.MaxValue * i);
 foreach (var item in collection) WriteLine(item);
 
+Console.WriteLine();
+
 foreach (var item in NumberExtensions.StepRange(3, 10, i => i + 2))
     WriteLine(item);
+
+ReadKey();
 
 static class NumberExtensions
 {

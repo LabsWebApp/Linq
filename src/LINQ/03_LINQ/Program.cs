@@ -13,24 +13,38 @@ var employees = new List<Employee>
     },
     new()
     {
-        FirstName = "Petr",
+        FirstName = "Andrey",
         LastName = "Petrov",
         Salary = 123000,
         StartDate = DateTime.Parse("12/3/1985")
     },
     new()
     {
-        FirstName = "Andrey",
-        LastName = "Andreev",
+        FirstName = "Ivan",
+        LastName = "Andrey",
         Salary = 1000000,
         StartDate = DateTime.Parse("1/12/2005")
+    },
+    new()
+    {
+        FirstName = "Andrey",
+        LastName = "Andreev",
+        Salary = 1000001,
+        StartDate = DateTime.Parse("1/12/2022")
+    },
+    new()
+    {
+        FirstName = "Ana",
+        LastName = "Andreev",
+        Salary = 1000002,
+        StartDate = DateTime.Parse("1/12/2022")
     }
 };
 
 // Выражение запроса.(Использование вызовов статических методов.)
 var query = // query - переменная запрса.
     Enumerable.Select(
-        Enumerable.OrderBy(
+        Enumerable.ThenBy(
             Enumerable.OrderBy(
                 Enumerable.Where(
                     employees, emp => emp.Salary > 100000),

@@ -8,12 +8,14 @@
 // Компилятор присваивает им имена, несмотря на то что эти имена недоступны для приложения.
 
 var instance = new { Name = "Petja", Age = 20 };
+var instance2 = new { Name = "Petja", Age = 20 };
 
 WriteLine($"Name = {instance.Name}, Age = {instance.Age}");
 
 Type type = instance.GetType();
 
 WriteLine(type.ToString());
+WriteLine(instance2.GetType());
 
 // Delay.
 ReadKey();

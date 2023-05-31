@@ -8,7 +8,7 @@ var members = new List<string>
     "Одиннадцать - Eleven",
 };
 
-WriteStream(members, "а", (x, y) => x.ToLower().Contains(y));
+WriteStream(members, "o", (x, y) => x.ToLower().Contains(y));
 
 // Задержка.
 ReadKey();

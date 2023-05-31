@@ -1,19 +1,20 @@
 ﻿using static System.Console;
 
 // orderby - используется для сортировки (последовательности) результата запроса.
-
 // Построить коллекцию сотрудников с национальностями.
 var employees = new List<Employee>
 {
-    new() {LastName = "Ivanov", FirstName = "Ivan", Nationality = "Kyrgyz"},
     new() {LastName = "Andreev", FirstName = "Andrew", Nationality = "Kyrgyz"},
-    new() {LastName = "Petrov", FirstName = "Petr", Nationality = "Armenians"}
+    new() {LastName = "Ivanov", FirstName = "Ivan", Nationality = "Kyrgyz"},
+    new() {LastName = "Borisov", FirstName = "Boris", Nationality = "Armenians"}
 };
 
 // Построить запрос.
 // Получение списка имен всех сотрудников вместе с их национальностями.
-var query = from emp in employees
-    orderby emp.Nationality ascending,
+var query = 
+    from emp in employees
+    orderby 
+        emp.Nationality ascending,
         emp.LastName descending, // ascending - по возрастанию | descending - по убыванию.
         emp.FirstName descending // по умолчанию - ascending.
     select emp;

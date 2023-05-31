@@ -2,12 +2,12 @@
 
 var instance = new
 {
-    Delegate = new Program((string @string) => WriteLine(@string))
+    Delegate = new Prog((string @string) => WriteLine(@string))
 };
 
-instance.Delegate("Hello world!");
+instance.Delegate.Invoke("Hello world!");
 
 // Delay.
 ReadKey();
 
-delegate void Program(string @string);
+delegate void Prog(string @string);

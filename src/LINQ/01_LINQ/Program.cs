@@ -41,7 +41,9 @@ var query = // query - переменная запроса.
 WriteLine("Высокооплачиваемые сотрудники:");
 
 foreach (var item in query)
-    WriteLine($"{item.LastName} {item.FirstName}");
+{
+    WriteLine($"{item.LastName} {item.FirstName} ({item.GetType()})");
+}
 
 // Delay.
 ReadKey();

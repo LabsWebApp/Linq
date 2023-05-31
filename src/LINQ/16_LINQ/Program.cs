@@ -11,7 +11,7 @@ var query = from x in numbers
     select new { Key = partition.Key, Count = partition.Count(), Group = partition };
 
 
-foreach (var item in query)
+foreach (var item in query) 
 {
     WriteLine($"mod2 == {item.Key}");
     WriteLine($"Count == {item.Count}");

@@ -12,7 +12,8 @@ var employees = new List<Employee>
 };
 
 // Построить запрос.
-var query = from emp in employees
+var query = 
+    from emp in employees
     let fullName = emp.FirstName + " " + emp.LastName // let - новый локальный идентификатор.
     orderby fullName descending
     select fullName;

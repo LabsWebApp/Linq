@@ -2,6 +2,7 @@
 
 var instance = new { Class = new FieldsClass() };
 
+instance.Class.Method();
 instance.Class.Field = 1;
 instance.Class.Method();
 

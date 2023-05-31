@@ -6,7 +6,7 @@ var query = from x in numbers
     where x % 2 == 0
     select x * 2;
 
-foreach (var item in query) WriteLine(item);
+foreach (var item in query) Write(item + ", ");
 
 // Delay.
 ReadKey();

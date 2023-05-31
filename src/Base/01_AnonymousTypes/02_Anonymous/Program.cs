@@ -8,5 +8,8 @@ var instance = new
 
 WriteLine($"Name = {instance.Name}, Age = {instance.Age}, Id = {instance.Id.Number}");
 
+WriteLine(instance.GetType());
+WriteLine(instance.Id.GetType());
+
 // Delay.
 ReadKey();

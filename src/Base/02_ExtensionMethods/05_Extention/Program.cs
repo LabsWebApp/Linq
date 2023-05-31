@@ -14,7 +14,7 @@ static class ExtensionClass
 {
     public static void Add(this int summand1, ref int summand2, out int sum)
     {
-        sum = summand1++ + summand2;
+        sum = summand1++ + summand2--;
         WriteLine($"{summand1} + {summand2} = {sum}");
     }
 }

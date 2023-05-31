@@ -11,7 +11,7 @@ var employees = new List<EmployeeId>
     new() {Id = "444", Name = "Alex Alexeev"}
 };
 
-// Построить коллекцию национальностей.
+// Построить коллекцию подданств.
 var empNationalities = new List<EmployeeNationality>
 {
     new() {Id = "111", Nationality = "Kyrgyz"},
@@ -20,11 +20,12 @@ var empNationalities = new List<EmployeeNationality>
 };
 
 // Построить запрос.
-// Получение списка имен всех сотрудников вместе с их национальностями, при этом отсортировав список по убыванию.
-var query = from emp in employees
+// Получение списка имен всех сотрудников вместе с их гражданствами, при этом отсортировав список по убыванию.
+var query = 
+    from emp in employees
     join n in empNationalities
         on emp.Id equals n.Id
-    orderby n.Nationality descending // ascending - по возрастанию | descending - по убыванию.
+    orderby n.Nationality ascending // descending // ascending - по возрастанию | descending - по убыванию.
     select new
     {
         Id = emp.Id,

@@ -1,5 +1,4 @@
-﻿using Core;
-using static Core.Data;
+﻿using static Core.Data;
 using static System.Console;
 
 

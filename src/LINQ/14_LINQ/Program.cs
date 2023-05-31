@@ -3,16 +3,18 @@
 // Построить коллекцию сотрудников с национальностями.
 var employees = new List<Employee>
 {
-    new() {LastName = "Andreev", FirstName = "Andrew",  Nationality = "Kyrgyz"},
     new() {LastName = "Ivanov",  FirstName = "Ivan",    Nationality = "Kyrgyz"},
+    new() {LastName = "Ivanov",  FirstName = "Vasja",    Nationality = "Armenians"},
     new() {LastName = "Andreev", FirstName = "Ivan",  Nationality = "Kyrgyz"},
     new() {LastName = "Petrov",  FirstName = "Petr",    Nationality = "Armenians"},
     new() {LastName = "Andreev", FirstName = "Sergey",  Nationality = "Kyrgyz"},
+    new() {LastName = "Andreev", FirstName = "Andrew",  Nationality = "Kyrgyz"},
     new() {LastName = "Petrov",  FirstName = "Slava",    Nationality = "Armenians"}
 };
 
 // Построить запрос.
-var query = from emp in employees
+var query = 
+    from emp in employees
     group emp by new { Nationality = emp.Nationality, LastName = emp.LastName };
 
 foreach (var group in query)

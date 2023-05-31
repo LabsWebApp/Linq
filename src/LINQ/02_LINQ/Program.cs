@@ -29,10 +29,11 @@ var employees = new List<Employee>
 
 // Выражение запроса.(Использование вызовов расширяющих методов.)
 var query = // query - переменная запрса.
-    employees.Where(employee => employee.Salary > 100000)
+    employees
+        .Where(employee => employee.Salary > 100000)
         .OrderBy(employee => employee.LastName)
         .ThenBy(employee => employee.FirstName)
-        .Select(employee => new // select - Опреация проекции.
+        .Select(employee => new // select - Операция проекции.
         {
             LastName = employee.LastName, FirstName = employee.FirstName
         });

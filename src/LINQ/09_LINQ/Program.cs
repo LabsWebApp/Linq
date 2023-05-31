@@ -5,13 +5,14 @@
 int[] numbers = { 1, 2, 3, 4 };
 
 // Построить запрос.
-var query = from x in numbers
+var query = 
+    from x in numbers
     select new Result(x, x * 2);
 
 numbers[0] = 777; // Выражение запроса выполняется в момент обращения к переменной запроса в foreach.
 
 foreach (var item in query)
-    WriteLine($"Input = {item.Input}, \t Output = {item.Output}");
+    WriteLine($"Input = {item.Input}, \t Output = {item.Output} ({item.GetType()})");
 
 // Delay.
 ReadKey();

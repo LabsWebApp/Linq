@@ -5,6 +5,12 @@ new
     Class = new FieldsClass { Field = 1 }
 }.Class.Method();
 
+
+WriteLine(new
+{
+    Class = new FieldsClass { Field = 1 }
+}.GetType());
+
 // Delay.
 ReadKey();
 
