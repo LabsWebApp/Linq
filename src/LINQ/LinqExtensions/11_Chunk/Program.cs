@@ -14,3 +14,5 @@ foreach (var item in chunk)
     item.CommaWriter();
     Console.WriteLine();
 }
+
+Console.ReadKey();

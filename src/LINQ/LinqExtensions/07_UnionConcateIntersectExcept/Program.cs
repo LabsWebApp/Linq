@@ -29,7 +29,7 @@ Enumerable.Range(0, 10)
 WriteLine("Except");
 
 Enumerable.Range(0, 10)
-    .Except(Enumerable.Range(5, 10))
+    .Except(Enumerable.Range(5, 10), new YesComparer())
     .CommaWriter();
 
 ReadKey();

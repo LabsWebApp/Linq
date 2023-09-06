@@ -1,10 +1,11 @@
 ﻿using System.Numerics;
 using System.Text;
+#pragma warning disable VSSpell001
 
 namespace TrivialCollections.SingleLinked.PolishNotation;
 
 /// <summary>
-/// Расчётный модуль для калькулятора, основанный на обратной польской записи
+/// Расчётный модуль для калькулятора, основанный на польской записи
 /// </summary>
 public class PostfixCalculator
 {
@@ -55,7 +56,7 @@ public class PostfixCalculator
     protected IList<string> QuinaryOperators { get; init; } = Array.Empty<string>();
 
     /// <summary>
-    /// Постфиксные операции: x !
+    /// Постфиксные операции: x!
     /// </summary>
     protected IList<string> PostfixOperators { get; init; } = new[] { "!", "%" };
 
@@ -171,10 +172,12 @@ public class PostfixCalculator
         "rad" => x % 360D * 0.0174532925199433D, // Pi / 180
         "gr" => x % Tau * 57.2957795130823D,     // 180 / Pi
         "%" => x / 100D,
-        "!" => x < 2 ? 1 : checked(
-            (double)Enumerable
-                .Range(2, (int)x - 1)
-                .Aggregate(BigInteger.One, (a, b) => a * b)),
+        "!" => x < 2 ? 1 : checked
+            (
+                (double)Enumerable
+                    .Range(2, (int)x - 1)
+                    .Aggregate(BigInteger.One, (a, b) => a * b)
+            ),
         _ => double.NaN
     };
 
@@ -185,11 +188,15 @@ public class PostfixCalculator
         "*" => x * y,
         "/" when y is 0 => throw new DivideByZeroException("Попытка деления на 0."),
         "/" => x / y,
-        "log" when y < 0 => throw new ArgumentException("Попытка вычислить логарифм у отрицательного числа.", nameof(y)),
-        "log" when x is < 0 or 1 => throw new ArgumentException("Основание логарифма должно быть больше нуля и не должно равняться единице.", nameof(x)),
+        "log" when y < 0 => 
+            throw new ArgumentException("Попытка вычислить логарифм у отрицательного числа.", nameof(y)),
+        "log" when x is < 0 or 1 => 
+            throw new ArgumentException("Основание логарифма должно быть больше нуля и не должно равняться единице.", nameof(x)),
         "log" => Math.Log(y, x),
-        "^" when x == 0 && y < 0 => throw new ArgumentException("Попытка возвести ноль в отрицательную степень."),
-        "^" when x < 0 && y - Math.Ceiling(y) != 0 => throw new ArgumentException("Попытка возвести отрицательное число в нецелую степень."),
+        "^" when x == 0 && y < 0 => 
+            throw new ArgumentException("Попытка возвести ноль в отрицательную степень."),
+        "^" when x < 0 && y - Math.Ceiling(y) != 0 => 
+            throw new ArgumentException("Попытка возвести отрицательное число в нецелую степень."),
         "^" => Math.Pow(x, y),
         "-%" => x - x / 100D * y,
         "+%" => x + x / 100D * y,

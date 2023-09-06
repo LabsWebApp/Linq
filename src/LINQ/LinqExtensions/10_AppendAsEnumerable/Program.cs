@@ -16,6 +16,8 @@ foreach (var i in a) WriteLine(i);
 WriteLine("a Count() = " + a.Count());
 WriteLine("IEnumerable<bool> Count() = " + a.AsEnumerable().Count());
 
+ReadKey();
+
 class A : IEnumerable<bool>, IEnumerator<bool>
 {
     private bool _position = false;
